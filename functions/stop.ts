@@ -1,7 +1,7 @@
 import {schedule} from '@netlify/functions'
 import {clientFromToken} from 'scalingo';
 
-export const handler = schedule('@hourly', async () => {
+export const handler = schedule('@daily', async () => {
   const {SCALINGO_API_TOKEN, SCALINGO_APP_ID} = process.env;
 
   const client = await clientFromToken(SCALINGO_API_TOKEN, {});
